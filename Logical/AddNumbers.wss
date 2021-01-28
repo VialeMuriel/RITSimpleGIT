@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editableResource createdTimestamp="1611827206833"
+    createdUser="MURIELViale" id="-49f7d1b9:1774406bc47:-7ec7"
+    selfDescribing="AddNumbers" type="wsdl_schema"
+    updatedTimestamp="1611827212782" updatedUser="MURIELViale" version="1.0">
+    <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+    <resourceConfig schemaSourceTemplateName="WSDL">
+        <schemaSourceConfig sourceType="101" uri="C:\Program Files\IBM\RationalIntegrationTester\examples\addnumbersclient\AddNumbers.wsdl"/>
+    </resourceConfig>
+</editableResource>

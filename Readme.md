@@ -6,7 +6,7 @@
 - Shutdown RIT
 - Go to GitHub and create a repository for the RIT project
 - Add the RIT project to GIT
-- Restart RIT, add virtual service and push to git using RIT.
+- Restart RIT, and verify that the RIT project is now connected to the GIT repository
 
 The only way I found to push the RIT project to GIT is to use the git bash command line client
 ```

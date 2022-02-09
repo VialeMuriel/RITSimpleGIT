@@ -39,7 +39,7 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 ## Configure HTTP proxy to run stub in RTAS
 
-- Modify the server base url in the http roxy registration.xml
+- Modify the server base url in the http proxy registration.xml
 ```
 <server base-url="<Rational® Test Automation Server_URL>" security-token="<Offline_User_Token>" />
 ```

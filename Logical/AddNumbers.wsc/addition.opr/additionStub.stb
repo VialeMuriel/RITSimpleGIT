@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <editableResource createdTimestamp="1611827237341"
     createdUser="MURIELViale" id="-49f7d1b9:1774406bc47:-7e48"
-    type="stub_resource" updatedTimestamp="1644414084241"
+    type="stub_resource" updatedTimestamp="1644417543173"
     updatedUser="040046706" version="1.1">
     <loggingConfiguration debug="true" resultWriterLoggingLevel="FULL" writeStubEventsToDB="true"/>
     <resourceConfig description="" name="">
@@ -841,7 +841,7 @@
                 </resourceConfig>
             </editableResource>
         </testTree>
-        <tagDataStore identifier="35982ac0:17ede6c5047:-74dd"
+        <tagDataStore identifier="35982ac0:17ede6c5047:-744d"
             inputMode="NONE" outputMode="NONE">
             <tag defaultValue="" description="" name="mm"/>
             <tag defaultValue="" description="" name="arg1"/>

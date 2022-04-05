@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editableResource createdTimestamp="1644489331872"
+    createdUser="040046706" id="35982ac0:17ede6c5047:-659d"
+    type="simple_test_data" updatedTimestamp="1644489331872"
+    updatedUser="040046706" version="1.0">
+    <loggingConfiguration debug="false" resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+    <resourceConfig autoMapColumns="true" columnCount=""
+        datasourceType="Delimited" enc="UTF-8" escapeQuotedString="true"
+        hasColumnNamesLine="true" linesBeforeColumnNames="0"
+        location="%%PROJECT/ROOT_DIRECTORY%%/Logical/AddNumbers.wsc/addition.opr/AdditionStub-Data (2).csv"
+        loop="false" parsingType="OffsetLength" separator=","
+        treatEmptyStringAsNull="false" treatTextAsEmpty="false"
+        treatTextAsEmptyValue="" treatTextAsNull="true"
+        treatTextAsNullValue="NULL" trim="false"/>
+</editableResource>

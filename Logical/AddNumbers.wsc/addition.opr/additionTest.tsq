@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <editableResource createdTimestamp="1611827237045"
     createdUser="MURIELViale" id="-49f7d1b9:1774406bc47:-7e5d"
-    type="test_resource" updatedTimestamp="1611827237045"
-    updatedUser="MURIELViale" version="1.1">
-    <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+    type="test_resource" updatedTimestamp="1644482002874"
+    updatedUser="040046706" version="1.1">
+    <loggingConfiguration debug="false" resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
     <resourceConfig description="" name="">
         <testTree>
             <editableResource id="-49f7d1b9:1774406bc47:-7e5b"
                 selfDescribing="Publish a message and wait for a response to be received.  This can then be validated accordingly."
                 type="send_request_action" version="1.1">
-                <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                <loggingConfiguration debug="false"
+                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
                 <resourceConfig description="" formatter="HTTP_Message"
                     name="&quot;Text&quot; on resource &quot;/addNumbers&quot; using schema &quot;Text&quot; via &quot;AddNumbersPort&quot;" transport="-49f7d1b9:1774406bc47:-7ec6:1731931949:408339756">
                     <headerMessage meTy="Message" type="12" version="1.2">
@@ -119,6 +120,7 @@
                                 <property name="XML.normalise" value="true"/>
                                 <property name="XML.declaration" value="true"/>
                                 <property name="XML.encoding" value="UTF-8"/>
+                                <property name="Multi-line indented" value="Multi-line indented"/>
                                 <property name="XML.xmlFormat" value="Multi-line indented"/>
                                 <property name="XML.cdata" value="false"/>
                                 <property name="XML.space" value="false"/>
@@ -252,8 +254,8 @@
                             </nodeProcessor>
                             <contentTree>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;addition___INPUT___addition&gt;&#xd;
    &lt;tns:addition xmlns:tns="http://GH.endpoint/"&gt;&#xd;
-      &lt;arg0/&gt;&#xd;
-      &lt;arg1/&gt;&#xd;
+      &lt;arg0&gt;2&lt;/arg0&gt;&#xd;
+      &lt;arg1&gt;2&lt;/arg1&gt;&#xd;
    &lt;/tns:addition&gt;&#xd;
 &lt;/addition___INPUT___addition&gt;<defaultActions>
                                     <defaultMessageActions>
@@ -307,20 +309,6 @@
                                     <updateField path="/text/addition___INPUT___addition">
                                     <_c assocdefid="addition___INPUT___addition"/>
                                     </updateField>
-                                    <setAction index="0"
-                                    path="/text/addition___INPUT___addition/tns:addition/arg0/{}"
-                                    replaceActionType="0" replaceOuterType="0">
-                                    <fieldAction type="0">
-                                    <fieldAction type="0"/>
-                                    </fieldAction>
-                                    </setAction>
-                                    <setAction index="0"
-                                    path="/text/addition___INPUT___addition/tns:addition/arg1/{}"
-                                    replaceActionType="0" replaceOuterType="0">
-                                    <fieldAction type="0">
-                                    <fieldAction type="0"/>
-                                    </fieldAction>
-                                    </setAction>
                                 </updates>
                             </contentTree>
                             <fieldActionGroup>
@@ -338,11 +326,14 @@
             <editableResource id="-49f7d1b9:1774406bc47:-7e57"
                 selfDescribing="Receive and validate a response to the request you have sent."
                 type="receive_reply_action" version="1.1">
-                <loggingConfiguration debug="false" writeStubEventsToDB="false"/>
+                <loggingConfiguration debug="false"
+                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
                 <resourceConfig description="" formatter="HTTP_Message"
                     name="&quot;Text&quot; using schema &quot;Text&quot;"
                     sendRequestID="-49f7d1b9:1774406bc47:-7e5b" transport="-49f7d1b9:1774406bc47:-7ec6:1731931949:408339756">
-                    <headerMessage type="12" version="1.2">
+                    <headerMessage assocdefid="Http Receive Reply"
+                        meTy="Message" name="" sch="Http Receive Reply"
+                        type="12" version="1.2">
                         <fieldActionGroup>
                             <fieldAction enabled="false" type="1">
                                 <fieldAction anyOrder="false"
@@ -350,7 +341,12 @@
                                     ignoreNonPresent="false" type="100"/>
                             </fieldAction>
                         </fieldActionGroup>
-                        <_c name="httpDetails" type="12" version="1.2">
+                        <_c meTy="String" name="StatusCode"
+                            sch="Http Receive Reply" type="7" version="1.2"/>
+                        <_c meTy="String" name="ReasonPhrase"
+                            sch="Http Receive Reply" type="7" version="1.2"/>
+                        <_c meTy="Message" name="httpDetails"
+                            sch="Http Receive Reply" type="12" version="1.2">
                             <fieldActionGroup>
                                 <fieldAction enabled="false" type="1">
                                     <fieldAction anyOrder="false"
@@ -359,7 +355,10 @@
                                     ignoreNonPresent="false" type="100"/>
                                 </fieldAction>
                             </fieldActionGroup>
-                            <_c name="httpHeaders" type="12" version="1.2">
+                            <_c meTy="String" name="Version"
+                                sch="Http Receive Reply" type="7" version="1.2"/>
+                            <_c meTy="Message" name="httpHeaders"
+                                sch="Http Receive Reply" type="12" version="1.2">
                                 <fieldActionGroup>
                                     <fieldAction enabled="false" type="1">
                                     <fieldAction anyOrder="false"
@@ -368,8 +367,8 @@
                                     ignoreNonPresent="false" type="100"/>
                                     </fieldAction>
                                 </fieldActionGroup>
-                                <_c name="Content-Type" type="7"
-                                    value="text/xml" version="1.2">
+                                <_c meTy="String" name="Content-Type"
+                                    sch="Http Receive Reply" type="7" version="1.2">
                                     <fieldActionGroup>
                                     <fieldAction enabled="false" type="1">
                                     <fieldAction enabled="false"
@@ -378,10 +377,20 @@
                                     </fieldActionGroup>
                                 </_c>
                             </_c>
+                            <_c meTy="Boolean" name="followRedirects"
+                                optional="true" sch="Http Receive Reply"
+                                type="8" version="1.2"/>
                         </_c>
+                        <_c meTy="String" name="MessageType"
+                            sch="Http Receive Reply" type="7" version="1.2"/>
+                        <_c meTy="Date-Time" name="rcvdTimestamp"
+                            sch="Http Receive Reply" type="11" version="1.2"/>
                     </headerMessage>
                     <subconfig MessageType="http.text.message.type"
-                        _version="1.1" formatter="HTTP_Message" transport="-49f7d1b9:1774406bc47:-7ec6:1731931949:408339756"/>
+                        URL="" _version="1.1" allowSubPath="false"
+                        consumerType="Participate" filterHeaders="false"
+                        filterMethod="false" filterResourcePath="false"
+                        formatter="HTTP_Message" transport="-49f7d1b9:1774406bc47:-7ec6:1731931949:408339756"/>
                     <bodyMessage assocdefid="Text" name="Text"
                         sch="Text" type="12" version="1.2">
                         <fieldActionGroup>
@@ -400,7 +409,8 @@
                                 <property name="XML.nullvalues" value="false"/>
                                 <property name="XML.normalise" value="true"/>
                                 <property name="XML.declaration" value="true"/>
-                                <property name="XML.encoding" value="UTF-8"/>
+                                <property name="XML.encoding" value="utf-8"/>
+                                <property name="Multi-line indented" value="Multi-line indented"/>
                                 <property name="XML.xmlFormat" value="Multi-line indented"/>
                                 <property name="XML.cdata" value="false"/>
                                 <property name="XML.space" value="false"/>
@@ -503,9 +513,9 @@
                                     <_c To="http://localhost:8088/addNumbers"/>
                                 </extension>
                             </nodeProcessor>
-                            <contentTree>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;addition___OUTPUT___additionResponse&gt;&#xd;
+                            <contentTree>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;addition___OUTPUT___additionResponse&gt;&#xd;
    &lt;tns:additionResponse xmlns:tns="http://GH.endpoint/"&gt;&#xd;
-      &lt;return/&gt;&#xd;
+      &lt;return&gt;4&lt;/return&gt;&#xd;
    &lt;/tns:additionResponse&gt;&#xd;
 &lt;/addition___OUTPUT___additionResponse&gt;<defaultActions>
                                     <defaultMessageActions>
@@ -545,13 +555,9 @@
                                     <updateField path="/text/addition___OUTPUT___additionResponse">
                                     <_c assocdefid="addition___OUTPUT___additionResponse"/>
                                     </updateField>
-                                    <setAction index="0"
-                                    path="/text/addition___OUTPUT___additionResponse/tns:additionResponse/return/{}"
-                                    replaceActionType="0" replaceOuterType="1">
-                                    <fieldAction type="1">
-                                    <fieldAction type="0"/>
-                                    </fieldAction>
-                                    </setAction>
+                                    <updateField path="/text/addition___OUTPUT___additionResponse/tns:additionResponse/return/{}">
+                                    <_c value="4"/>
+                                    </updateField>
                                 </updates>
                             </contentTree>
                             <fieldActionGroup>
@@ -565,5 +571,6 @@
             </editableResource>
         </testTree>
         <tagDataStore inputMode="NONE" outputMode="NONE"/>
+        <testprops messageClearance="false"/>
     </resourceConfig>
 </editableResource>
